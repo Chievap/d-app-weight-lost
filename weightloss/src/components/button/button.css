@@ -1,0 +1,17 @@
+.buttonContainer{
+    background-color: #5e9edd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    max-height: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 20px;
+}
+
+.buttonText {
+    color: white;
+    font-size: large;
+    user-select: none;
+}

@@ -1,0 +1,14 @@
+.mealList{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.mealItem {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 10rem;
+}

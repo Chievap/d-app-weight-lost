@@ -1,15 +1,26 @@
 import React, { createContext, useState, FC } from "react";
+import { Meal } from "../models/meal";
 import { ContextState } from "./Types";
 
-const contextDefaultValues: ContextState = {};
+const contextDefaultValues: ContextState = { addMeal: (meal: Meal) => {}, getMeals: () => [] };
 
 export const GlobalContext = createContext<ContextState>(contextDefaultValues);
 
 const GlobalState: FC = ({ children }) => {
-  const test = () => {};
+  const [meals, setMeals] = useState<Meal[]>([]);
+
+  const addMeal = (meal: Meal) => {
+    setMeals([...meals, meal]);
+  };
+
+  const getMeals = () => {
+    return meals;
+  };
 
   return (
-    <GlobalContext.Provider value={{ test }}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={{ addMeal, getMeals }}>
+      {children}
+    </GlobalContext.Provider>
   );
 };
 

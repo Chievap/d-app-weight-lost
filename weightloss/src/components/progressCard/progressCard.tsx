@@ -1,25 +1,32 @@
-import React, { FC, useState } from "react";
+import React, { FC, useContext, useState, useEffect } from "react";
+import { GlobalContext } from "../../context/GlobalProvider";
 import { Meal } from "../../models/meal";
 import Card from "../card/card";
 
 import "./progressCard.css";
 
 const ProgressCard: FC = () => {
-  const meals = [
-    {
-      name: "name 1",
-      kcal: 5,
-    },
-    {
-      name: "name 2",
-      kcal: 5,
-    },
-  ];
+  const { getMeals, meals } = useContext(GlobalContext);
+  const [mls, setMeals] = useState<Meal[]>();
+
+  useEffect(() => {
+    setMeals(meals);
+    console.log(meals);
+    
+  }, [meals]);
 
   const renderMealComponent = () => {
+    if (!mls || mls.length === 0) {
+      return (
+        <div className="mealList">
+          <p>No meals added yet</p>
+        </div>
+      );
+    }
+
     return (
       <div className="mealList">
-        {meals.map((meal: Meal) => (
+        {mls.map((meal: Meal) => (
           <div className="mealItem">
             <p>{meal.name}</p>
             <p>{meal.kcal}</p>

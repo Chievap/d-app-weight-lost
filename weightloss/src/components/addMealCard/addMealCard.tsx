@@ -7,7 +7,7 @@ import Card from "../card/card";
 import "./addMealCard.css";
 
 const AddMealCard: FC = () => {
-  const { addMeal, getMeals } = useContext(GlobalContext);
+  const { addMeal } = useContext(GlobalContext);
   const [name, setName] = useState("");
   const [kcal, setKcal] = useState(0);
 

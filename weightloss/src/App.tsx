@@ -8,9 +8,6 @@ import ProgressCard from "./components/progressCard/progressCard";
 import AddMealCard from "./components/addMealCard/addMealCard";
 
 function App() {
-  const test = () => {
-    console.log("click");
-  };
   return (
     <GlobalState>
       <div className="App">

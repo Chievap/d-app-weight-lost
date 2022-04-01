@@ -9,8 +9,9 @@ const Header: FC = ({}) => {
   return (
     <div className="headerContainer">
       <p className="headerText">Weight loss</p>
-      <div className="headerButton"><Button text={"Join"} onClick={() => join()} /></div>
-      
+      <div className="headerButton">
+        <Button text={"Join"} onClick={() => join()} />
+      </div>
     </div>
   );
 };
